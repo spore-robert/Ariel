@@ -336,19 +336,22 @@ class Soldier(pygame.sprite.Sprite):
 				self.frame_index = 0
 	
 	def load_animations(self, scale):
-    # Load all images for the character animations
-    animation_types = ['Idle', 'Run', 'Jump', 'Death']
-    for animation in animation_types:
-        temp_list = []
-        # Using self.char_type to load images based on character type
-        num_of_frames = len(os.listdir(f'img/{self.char_type}/{animation}'))
-        for i in range(num_of_frames):
-            img = pygame.image.load(f'img/{self.char_type}/{animation}/{i}.png').convert_alpha()
-            img = pygame.transform.scale(img, (int(img.get_width() * scale), int(img.get_height() * scale)))
-            temp_list.append(img)
-        self.animation_list.append(temp_list)
+		# Load all images for the character animations
+		
+		animation_types = ['Idle', 'Run', 'Jump', 'Death']
+		
+		for animation in animation_types:
+			temp_list = []
+			'''
+			# Using self.char_type to load images based on character type
+	    	num_of_frames = len(os.listdir(f'img/{self.char_type}/{animation}'))
+	        for i in range(num_of_frames):
+	            img = pygame.image.load(f'img/{self.char_type}/{animation}/{i}.png').convert_alpha()
+	            img = pygame.transform.scale(img, (int(img.get_width() * scale), int(img.get_height() * scale)))
+	            temp_list.append(img)
+	        self.animation_list.append(temp_list)
 
-
+		'''
 
 	def update_action(self, new_action):
 		#check if the new action is different to the previous one
